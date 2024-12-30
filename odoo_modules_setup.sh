@@ -5,8 +5,8 @@
 
 # Configuration
 ODOO_COMMAND="sudo -u odoo odoo"  # Odoo executable command
-ODOO_CONF="/etc/odona/dbname/odoo.conf"  # Odoo configuration file
-DATABASE="dbname"  # Name of your database
+ODOO_CONF="/etc/odona/ateliernuevo.cloudpepper.site/odoo.conf"  # Odoo configuration file
+DATABASE="ateliernuevo.cloudpepper.site"  # Name of your database
 MODULES=(
     sale_management
     account
@@ -165,10 +165,12 @@ MODULES=(
 echo "Starting module installation/upgrades..."
 echo "Database: $DATABASE"
 
-# Loop through each module and upgrade it
+# Loop through each module and install/upgrade it
 for MODULE in "${MODULES[@]}"; do
     echo "Processing module: $MODULE"
-    $ODOO_BIN_PATH -d "$DATABASE" -u "$MODULE" --stop-after-init
+    
+    # Correctly construct the Odoo command
+    $ODOO_COMMAND -c "$ODOO_CONF" --no-http --stop-after-init -d "$DATABASE" -u "$MODULE"
     
     # Check if the command was successful
     if [ $? -eq 0 ]; then
@@ -179,5 +181,3 @@ for MODULE in "${MODULES[@]}"; do
         exit 1
     fi
 done
-
-echo "All modules processed successfully!"
