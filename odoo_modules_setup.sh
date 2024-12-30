@@ -155,6 +155,10 @@ MODULES=(
     portal
     http_routing
     phone_validation
+    account_mass_reconcile
+    account_move_line_reconcile_manual
+    account_reconcile_oca
+    account_statement_import_file_reconcile_oca
 )
 
 echo "Starting module installation/upgrades..."
