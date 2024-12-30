@@ -5,8 +5,8 @@
 
 # Configuration
 ODOO_COMMAND="sudo -u odoo odoo"  # Odoo executable command
-ODOO_CONF="/etc/odona/ateliernuevo.cloudpepper.site/odoo.conf"  # Odoo configuration file
-DATABASE="ateliernuevo.cloudpepper.site"  # Name of your database
+ODOO_CONF="/etc/odona/dbname/odoo.conf"  # Odoo configuration file
+DATABASE="dbname"  # Name of your database
 MODULES=(
     sale_management
     account
