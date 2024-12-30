@@ -4,8 +4,9 @@
 #./install_odoo_modules.sh
 
 # Configuration
-ODOO_BIN_PATH="./odoo-bin"  # Path to the odoo-bin file
-DATABASE="your_database_name"  # Name of your Odoo database
+ODOO_COMMAND="sudo -u odoo odoo"  # Odoo executable command
+ODOO_CONF="/etc/odona/ateliernuevo.cloudpepper.site/odoo.conf"  # Odoo configuration file
+DATABASE="ateliernuevo.cloudpepper.site"  # Name of your database
 MODULES=(
     sale_management
     account
